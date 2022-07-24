@@ -1,27 +1,24 @@
 import React from 'react';
-import { Wrapper, Flex } from '../styled/navbar';
-import styled from "styled-components"
+import { Wrapper, Flex, NavContainer, NavIcons } from '../styled/navbar';
+import Link from 'next/link';
 
-const FlexNav = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
 
 const Navbar = () => {
   return (
     <Wrapper>
-      <FlexNav>
+      <NavContainer>
         <Flex>
-          <h3 style={{padding: '10px', marginLeft: "10px"}}>Home</h3>
-          <h3 style={{padding: '10px'}}>Foodie</h3>
-          <h3 style={{padding: '10px'}}>Recipe</h3>
+          <Link href="/" passHref>
+            <NavIcons style={{ marginLeft: '10px' }}>Home</NavIcons>
+          </Link>
+          <NavIcons>Foodie</NavIcons>
+          <NavIcons>Recipe</NavIcons>
         </Flex>
         <Flex>
-          <div style={{padding: '10px'}}>FavList</div>
-          <button style={{padding: '10px'}}>Login</button>
+          <NavIcons>FavList</NavIcons>
+          <NavIcons>Login</NavIcons>
         </Flex>
-      </FlexNav>
+      </NavContainer>
     </Wrapper>
   );
 };
