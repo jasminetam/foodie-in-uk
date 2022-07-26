@@ -16,7 +16,9 @@ const Navbar = () => {
         </Flex>
         <Flex>
           <NavIcons>FavList</NavIcons>
-          <NavIcons>Login</NavIcons>
+          <Link href="/login">
+            <NavIcons>Login</NavIcons>
+            </Link>
         </Flex>
       </NavContainer>
     </Wrapper>
