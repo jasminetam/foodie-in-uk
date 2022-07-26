@@ -19,7 +19,7 @@ const Footer = styled.footer`
   height: 40px;
   justify-content: center;
   align-items: center;
-  margin-top: 500px;
+  margin-top: 200px;
 `;
 
 const Layout: React.FC<Props> = ({ title, children }): JSX.Element => {

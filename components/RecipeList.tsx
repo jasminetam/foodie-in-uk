@@ -20,9 +20,9 @@ const StyledImg = styled.img`
 const RecipeList: React.FC<Props> = ({ recipe }) => {
   return (
     <Wrapper>
-      {/* <Link href={`/post/${recipe.slug}`} passHref> */}
-      <StyledImg src={recipe.image} alt={recipe.recipeName} />
-      {/* </Link> */}
+      <Link href={`/post/${recipe.slug}`} passHref>
+        <StyledImg src={recipe.image} alt={recipe.recipeName} />
+      </Link>
       <h2>{recipe.recipeName}</h2>
       <h3>{recipe.cookingStyle}</h3>
     </Wrapper>
