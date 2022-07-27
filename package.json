@@ -13,8 +13,10 @@
     "bcryptjs": "^2.4.3",
     "mongoose": "^6.4.7",
     "next": "12.2.3",
+    "next-auth": "^4.10.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.33.1",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
