@@ -14,13 +14,13 @@ const Wrapper = styled.div`
   height: 700px;
 `;
 
-const login: React.FC = () => {
+const Login: React.FC = () => {
   const { data: session } = useSession();
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm();
+  }: any = useForm();
   const router = useRouter();
   const { redirect }: any = router.query;
 
@@ -57,8 +57,8 @@ const login: React.FC = () => {
         >
           <StyledForm onSubmit={handleSubmit(submitHandler)}>
             <FormTitle>Login</FormTitle>
-            <div style={{padding: '20px'}}>
-              <div style={{padding: '10px'}}>
+            <div style={{ padding: '20px' }}>
+              <div style={{ padding: '10px' }}>
                 <label htmlFor="email">Email: </label>
                 <input
                   type="email"
@@ -74,7 +74,7 @@ const login: React.FC = () => {
                 />
                 {errors.email && <div>{errors.email.message}</div>}
               </div>
-              <div style={{padding: '10px'}}>
+              <div style={{ padding: '10px' }}>
                 <label htmlFor="password">Password: </label>
                 <input
                   type="password"
@@ -92,12 +92,12 @@ const login: React.FC = () => {
               </div>
             </div>
             <div>
-              <button style={{margin: '20px'}}>Login</button>
+              <button style={{ margin: '20px' }}>Login</button>
             </div>
             <div>
               {' '}
               Don&apos;t have an account? &nbsp;
-              <Link href={`/register?redirect=${redirect || '/'}`}>
+              <Link href={`/register?redirect=${redirect || '/register'}`}>
                 Register
               </Link>
             </div>
@@ -108,4 +108,4 @@ const login: React.FC = () => {
   );
 };
 
-export default login;
+export default Login;

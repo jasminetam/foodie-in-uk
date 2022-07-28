@@ -56,7 +56,7 @@ const data = {
       rating: 4.8,
       numLikes: 15,
       description:
-        'A tasty adn affordable steak house located in Covent Garden.',
+        'A tasty and affordable steak house located in Covent Garden.',
     },
   ],
   recipes: [

@@ -4,11 +4,11 @@ import Layout from 'components/Layout';
 import PostList from 'components/PostList';
 import RecipeList from 'components/RecipeList';
 //database
-import db from '../utils/db';
+import db from 'utils/db';
 import Post from 'models/Post';
 import Recipe from 'models/Recipe';
 //typescript
-import { postProps, recipeProps } from '../lib/interface/interface';
+import { postProps, recipeProps } from 'lib/interface/interface';
 
 //styles
 import styled from 'styled-components';
@@ -25,7 +25,7 @@ const Grid = styled.div`
 `;
 
 const Home: NextPage<Props> = ({ posts, recipes }) => {
-  console;
+  // console.log(234, posts);
   return (
     <Layout title="Home">
       <div>
