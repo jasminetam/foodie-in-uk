@@ -3,12 +3,9 @@ import type { AppProps } from 'next/app';
 import { SessionProvider, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
-function MyApp({
-  Component,
-  pageProps: { session, pageProps },
-}: AppProps | any) {
+function MyApp({ Component, pageProps }: AppProps | any) {
   return (
-    <SessionProvider session={session}>
+    <SessionProvider session={pageProps.session}>
       {Component.auth ? (
         <Auth adminOnly={Component.auth.adminOnly}>
           <Component {...pageProps} />
