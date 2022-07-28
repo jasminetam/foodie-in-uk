@@ -12,14 +12,11 @@ import { postProps, recipeProps } from 'lib/interface/interface';
 
 //styles
 import styled from 'styled-components';
-import { useState } from 'react';
 
 interface Props {
   title: string;
-  props: {
-    posts: postProps[];
-    recipes: recipeProps[];
-  };
+  posts: postProps[];
+  recipes: recipeProps[];
 }
 
 const Grid = styled.div`
@@ -27,10 +24,7 @@ const Grid = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
 `;
 
-const Home: NextPage<Props> = (props: any) => {
-  const [posts, setPosts] = useState(props.posts);
-  const [recipes, setRecipes] = useState(props.recipes);
-  console.log(123, props.posts);
+const Home: NextPage<Props> = ({ posts, recipes }) => {
   return (
     <Layout title="Home">
       <div>
@@ -57,13 +51,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
   await db.connect();
   const posts = await Post.find().lean();
   const recipes = await Recipe.find().lean();
-  console.log(123, posts);
   return {
     props: {
       posts: posts.map(db.convertDocToObj),
       recipes: recipes.map(db.convertDocToObj),
     },
   };
-}
+};
 
 export default Home;
