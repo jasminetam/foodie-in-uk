@@ -37,3 +37,10 @@ export interface recipeProps {
   description: string;
   steps: string[];
 }
+
+export interface userProps {
+  name: string;
+  email: string;
+  password: string;
+  isAdmin: boolean;
+}

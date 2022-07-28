@@ -23,3 +23,8 @@ a {
     background: black;
   }
 }
+
+.dropdown-link {
+  display: flex;
+  padding: 8px
+}

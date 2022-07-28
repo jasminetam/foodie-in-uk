@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 interface Props {
   title: string;
-  children: childNode;
+  children: childNode | any;
 }
 const Main = styled.main`
   margin-top: 32px;
