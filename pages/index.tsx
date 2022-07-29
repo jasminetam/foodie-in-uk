@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 //components
 import Layout from 'components/Layout';
 import PostList from 'components/PostList';
@@ -25,21 +25,20 @@ const Grid = styled.div`
 `;
 
 const Home: NextPage<Props> = ({ posts, recipes }) => {
-  // console.log(234, posts);
   return (
     <Layout title="Home">
       <div>
         <h1 style={{ margin: '20px' }}>Recent Posts:</h1>
         <Grid>
           {posts?.length > 0 &&
-            posts.map((post) => {
+            posts.map((post: any) => {
               return <PostList key={post.slug} post={post} />;
             })}
         </Grid>
         <h1 style={{ margin: '20px' }}>Recent Recipes:</h1>
         <Grid>
           {recipes?.length > 0 &&
-            recipes.map((recipe) => {
+            recipes.map((recipe: any) => {
               return <RecipeList key={recipe.slug} recipe={recipe} />;
             })}
         </Grid>
@@ -48,7 +47,7 @@ const Home: NextPage<Props> = ({ posts, recipes }) => {
   );
 };
 
-export async function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps = async () => {
   await db.connect();
   const posts = await Post.find().lean();
   const recipes = await Recipe.find().lean();
@@ -58,6 +57,6 @@ export async function getServerSideProps() {
       recipes: recipes.map(db.convertDocToObj),
     },
   };
-}
+};
 
 export default Home;
